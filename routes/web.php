@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});
+*/
+Route::get('/', function () {
+    return "Home del mio sito laravel";
+});
+
+Route::get('/posts', function () {
+    return "Elnco degli articoli";
+});
+
+Route::get('/libri',[ 'as' =>'libriElenco', ] function () {
+    return "Benvenuti i Laravel";
+});
+
+//redirect verso /libri
+Route::get('/elencolibri', function () {
+  //richiamo la rotta usando il nome
+       return redirect( route('libriElenco') ); 
+       //effetto un redirect alla pagina libri Elenco
 });
